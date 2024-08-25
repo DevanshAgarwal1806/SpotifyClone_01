@@ -47,7 +47,7 @@ async function main() {
   let currentSong = new Audio();
   // songs = await getSongs();
   // console.log(songs);
-  currentSong.src = "/songs2/TollywoodHits/" + "Chuttamalle" + ".m4a";
+  currentSong.src = "JavaScript/SpotifyClone/songs2/TollywoodHits/" + "Chuttamalle" + ".m4a";
   currentSong.addEventListener("timeupdate", () => {
     // console.log(currentSong.currentTime, currentSong.duration);
     document.querySelector(".songtime").innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)}/${secondsToMinutesSeconds(currentSong.duration)}`;
@@ -73,7 +73,7 @@ async function main() {
       lang = cardd.querySelector("h2").innerText;
       // console.log(lang);
       getSongs(lang);
-      currentSong.src=`/songs2/${lang}/` + langarr[0]+ ".m4a";
+      currentSong.src=`JavaScript/SpotifyClone/songs2/${lang}/` + langarr[0]+ ".m4a";
       currentSong.play();
       document.querySelector(".songinfo_").innerHTML = langarr[0];
       play.src = "pause.svg";
@@ -84,7 +84,7 @@ async function main() {
           console.log(e);
           let track = e.querySelector(".songinfo").firstElementChild.innerHTML;
           console.log(track);
-          currentSong.src = `/songs2/${lang}/` + e.querySelector(".songinfo").firstElementChild.innerHTML + ".m4a"
+          currentSong.src = `JavaScript/SpotifyClone/songs2/${lang}/` + e.querySelector(".songinfo").firstElementChild.innerHTML + ".m4a"
           currentSong.play();
           play.src = "pause.svg";
           document.querySelector(".songinfo_").innerHTML = track;
@@ -138,7 +138,7 @@ async function main() {
     // console.log(currentsong_[0].split('.')[0]);
     let index = langarr.indexOf(currentsong_[0].split('.')[0]);
     if (index > 0) {
-      currentSong.src = `/songs2/${lang}/` + langarr[index - 1] + ".m4a";
+      currentSong.src = `JavaScript/SpotifyClone/songs2/${lang}/` + langarr[index - 1] + ".m4a";
       currentSong.play();
       document.querySelector(".songinfo_").innerHTML = langarr[index - 1];
     }
@@ -161,7 +161,7 @@ async function main() {
     }
     else if (index==length-1)  {
       console.log("hishk")
-      currentSong.src = `/songs2/${lang}/` + langarr[0] + ".m4a";
+      currentSong.src = `JavaScript/SpotifyClone/songs2/${lang}/` + langarr[0] + ".m4a";
       currentSong.play();
       document.querySelector(".songinfo_").innerHTML = langarr [0];
     }
