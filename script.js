@@ -38,7 +38,7 @@ async function getSongs(lang) {
   }
 }
 function PlayMusic(track) {
-  // currentSong.src = "/songs/" + track + ".m4a"
+
   // currentSong.play();
   // play.src = "pause.svg";
 }
@@ -47,7 +47,8 @@ async function main() {
   let currentSong = new Audio();
   // songs = await getSongs();
   // console.log(songs);
-  currentSong.src = "/songs2/TollywoodHits/" + "Chuttamalle" + ".m4a";
+
+  currentSong.src = "/songs/" + "KeshavaMadhava" + ".m4a";
   currentSong.addEventListener("timeupdate", () => {
     // console.log(currentSong.currentTime, currentSong.duration);
     document.querySelector(".songtime").innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)}/${secondsToMinutesSeconds(currentSong.duration)}`;
