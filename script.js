@@ -38,11 +38,12 @@ async function getSongs(lang) {
   }
 }
 function PlayMusic(track) {
-  currentSong.src = "/songs/" + track + ".m4a"
+  // currentSong.src = "/songs/" + track + ".m4a"
   // currentSong.play();
   // play.src = "pause.svg";
 }
 async function main() {
+  console.log("hello")
   let currentSong = new Audio();
   // songs = await getSongs();
   // console.log(songs);
