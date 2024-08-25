@@ -172,7 +172,9 @@ body {
 .card:hover{
     background-color:rgb(52, 50, 50);
 }
-
+.card:click{
+    background-color:rgb(52, 50, 50);
+}
 .card img {
     width: 115px;
     margin: auto;
