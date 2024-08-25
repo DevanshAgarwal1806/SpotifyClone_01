@@ -38,7 +38,7 @@ async function getSongs(lang) {
   }
 }
 function PlayMusic(track) {
-  currentSong.src = "http://127.0.0.1:3000/songs/" + track + ".m4a"
+  // currentSong.src = "http://127.0.0.1:3000/songs/" + track + ".m4a"
   // currentSong.play();
   // play.src = "pause.svg";
 }
@@ -46,7 +46,7 @@ async function main() {
   let currentSong = new Audio();
   // songs = await getSongs();
   // console.log(songs);
-  currentSong.src = "http://127.0.0.1:3000/songs/" + "KeshavaMadhava" + ".m4a";
+  currentSong.src = "/songs/" + "KeshavaMadhava" + ".m4a";
   currentSong.addEventListener("timeupdate", () => {
     // console.log(currentSong.currentTime, currentSong.duration);
     document.querySelector(".songtime").innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)}/${secondsToMinutesSeconds(currentSong.duration)}`;
@@ -72,7 +72,7 @@ async function main() {
       lang = cardd.querySelector("h2").innerText;
       // console.log(lang);
       getSongs(lang);
-      currentSong.src=`http://127.0.0.1:3000/songs2/${lang}/` + langarr[0]+ ".m4a";
+      currentSong.src=`/songs2/${lang}/` + langarr[0]+ ".m4a";
       currentSong.play();
       document.querySelector(".songinfo_").innerHTML = langarr[0];
       play.src = "pause.svg";
@@ -83,7 +83,7 @@ async function main() {
           console.log(e);
           let track = e.querySelector(".songinfo").firstElementChild.innerHTML;
           console.log(track);
-          currentSong.src = `http://127.0.0.1:3000/songs2/${lang}/` + e.querySelector(".songinfo").firstElementChild.innerHTML + ".m4a"
+          currentSong.src = `/songs2/${lang}/` + e.querySelector(".songinfo").firstElementChild.innerHTML + ".m4a"
           currentSong.play();
           play.src = "pause.svg";
           document.querySelector(".songinfo_").innerHTML = track;
@@ -137,7 +137,7 @@ async function main() {
     // console.log(currentsong_[0].split('.')[0]);
     let index = langarr.indexOf(currentsong_[0].split('.')[0]);
     if (index > 0) {
-      currentSong.src = `http://127.0.0.1:3000/songs2/${lang}/` + langarr[index - 1] + ".m4a";
+      currentSong.src = `/songs2/${lang}/` + langarr[index - 1] + ".m4a";
       currentSong.play();
       document.querySelector(".songinfo_").innerHTML = langarr[index - 1];
     }
@@ -154,13 +154,13 @@ async function main() {
     console.log(length)
     if (index < length-1) {
       console.log("hi")
-      currentSong.src = `http://127.0.0.1:3000/songs2/${lang}/` + langarr[index + 1] + ".m4a";
+      currentSong.src = `/songs2/${lang}/` + langarr[index + 1] + ".m4a";
       currentSong.play();
       document.querySelector(".songinfo_").innerHTML = langarr[index + 1];
     }
     else if (index==length-1)  {
       console.log("hishk")
-      currentSong.src = `http://127.0.0.1:3000/songs2/${lang}/` + langarr[0] + ".m4a";
+      currentSong.src = `/songs2/${lang}/` + langarr[0] + ".m4a";
       currentSong.play();
       document.querySelector(".songinfo_").innerHTML = langarr [0];
     }
